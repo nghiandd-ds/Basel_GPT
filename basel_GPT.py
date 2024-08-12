@@ -8,6 +8,13 @@ import streamlit as st
 a_1 = "sk-proj-XcGYy0FCItfSapl8Ea-HQxpfaPP8x2vI2z9s1HvPQ1w22UXDoqMZ3iL0Lb4VEtzR6yEcv0"
 a_2 = "ZKSTT3BlbkFJd0qVwIxqcz7C_q4eqtT3sKpYQbMr14K5xkR6zoOBUIYzMowQ7cfnUz_aPTH8CJPKqEctKLnJkA"
 
+df = pd.concat([
+    pd.read_csv("bs_fw_0.csv"),
+    pd.read_csv("bs_fw_1.csv"),
+    pd.read_csv("bs_fw_2.csv")    
+])
+
+
 client = openai.OpenAI(api_key=a_1 + a_2)
 
 def num_tokens(text: str, model: str = 'gpt-4o-mini-2024-07-18') -> int:
@@ -115,7 +122,7 @@ for msg in st.session_state.messages:
 if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
-    msg = ask(prompt)
+    msg = ask(prompt, df=df)
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
 
