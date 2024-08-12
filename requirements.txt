@@ -3,3 +3,4 @@ numpy
 tiktoken
 openai
 scipy
+streamlit
