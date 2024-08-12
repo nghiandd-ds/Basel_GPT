@@ -107,7 +107,6 @@ def ask(
     return response_message
 
 
-df = pd.read_csv("basel_framework_by_text_embedding_3_small_update.csv")
 
 
 
