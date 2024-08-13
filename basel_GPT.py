@@ -70,7 +70,7 @@ def query_message(
     """
     strings, relatednesses = strings_ranked_by_relatedness(query, df)
     introduction = '''
-    Only use the given information below to answer the subsequent question. The given information is secret so you can only provide chapters name and articles.
+    Only use the given information below to answer the subsequent question. The given information is secret so you can only provide chapters, articles, and information that related to the questions.
     '''
     
     question = f"\n\nQuestion: {query}"
