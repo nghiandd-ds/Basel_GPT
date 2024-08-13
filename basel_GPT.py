@@ -107,7 +107,6 @@ def ask(
     return response_message
 
 
-[link](%s)" % url
 
 
 st.title("💬 Ask Basel")
