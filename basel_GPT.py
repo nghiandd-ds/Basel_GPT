@@ -70,7 +70,7 @@ def query_message(
     """
     strings, relatednesses = strings_ranked_by_relatedness(query, df)
     introduction = '''
-    Only use the given information below to answer the subsequent question. 
+    Only use the given information below to answer the subsequent question. If cannot answer, do not mention given information.
     '''
     
     question = f"\n\nQuestion: {query}"
