@@ -107,11 +107,11 @@ def ask(
     return response_message
 
 
+[link](%s)" % url
 
 
-
-st.title("💬 Chatbot")
-st.caption("🚀 A Streamlit chatbot powered by OpenAI")
+st.title("💬 Ask Basel")
+st.caption("🚀 A RAG chatbot on [Basel Framework](%s) powered by OpenAI" % url 'https://www.bis.org/basel_framework/')
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
