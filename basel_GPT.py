@@ -9,9 +9,12 @@ a_1 = "sk-proj-XcGYy0FCItfSapl8Ea-HQxpfaPP8x2vI2z9s1HvPQ1w22UXDoqMZ3iL0Lb4VEtzR6
 a_2 = "ZKSTT3BlbkFJd0qVwIxqcz7C_q4eqtT3sKpYQbMr14K5xkR6zoOBUIYzMowQ7cfnUz_aPTH8CJPKqEctKLnJkA"
 
 df = pd.concat([
-    pd.read_csv("bs_fw_0.csv"),
-    pd.read_csv("bs_fw_1.csv"),
-    pd.read_csv("bs_fw_2.csv")    
+    pd.read_csv("abbreviations_basel_framework_by_text_embedding_3_small_update20240814.csv"),
+    pd.read_csv("bs_fw_0_update_20240814.csv"),
+    pd.read_csv("bs_fw_1_update_20240814.csv"),
+    pd.read_csv("bs_fw_2_update_20240814.csv"),
+    pd.read_csv("bs_fw_3_update_20240814.csv"),
+    pd.read_csv("bs_fw_4_update_20240814.csv")
 ])
 
 
