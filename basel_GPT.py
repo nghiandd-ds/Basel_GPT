@@ -119,7 +119,7 @@ def ask(
 
 
 st.title("💬 Ask Basel")
-st.caption("🚀 A RAG chatbot on [Basel Framework](https://www.bis.org/basel_framework/) and [CCR](https://www.eba.europa.eu/regulation-and-policy/single-rulebook/interactive-single-rulebook/12674) powered by OpenAI")
+st.caption("🚀 A RAG chatbot on [Basel Framework](https://www.bis.org/basel_framework/) and [CRR](https://www.eba.europa.eu/regulation-and-policy/single-rulebook/interactive-single-rulebook/12674) powered by OpenAI")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
