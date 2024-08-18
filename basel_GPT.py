@@ -14,7 +14,9 @@ df = pd.concat([
     pd.read_csv("bs_fw_1_update_20240814.csv"),
     pd.read_csv("bs_fw_2_update_20240814.csv"),
     pd.read_csv("bs_fw_3_update_20240814.csv"),
-    pd.read_csv("bs_fw_4_update_20240814.csv")
+    pd.read_csv("bs_fw_4_update_20240814.csv"),
+    pd.read_csv("ccr_eba_0.csv"),
+    pd.read_csv("ccr_eba_1.csv")
 ])
 
 
@@ -114,7 +116,7 @@ def ask(
 
 
 st.title("💬 Ask Basel")
-st.caption("🚀 A RAG chatbot on [Basel Framework](https://www.bis.org/basel_framework/) powered by OpenAI")
+st.caption("🚀 A RAG chatbot on [Basel Framework](https://www.bis.org/basel_framework/) and [CCR](https://www.eba.europa.eu/regulation-and-policy/single-rulebook/interactive-single-rulebook/12674) powered by OpenAI")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
