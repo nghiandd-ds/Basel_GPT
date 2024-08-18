@@ -57,7 +57,6 @@ def strings_ranked_by_relatedness(
         input=query,
     )
     query_embedding = query_embedding_response.data[0].embedding
-    print(string_to_list(row["embedding"]))
     strings_and_relatednesses = pd.DataFrame([
         (row["text"], relatedness_fn(query_embedding, string_to_list(row["embedding"])))
         for i, row in df.iterrows()
