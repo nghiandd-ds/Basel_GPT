@@ -35,9 +35,12 @@ def num_tokens(text: str, model: str = 'gpt-4o-mini-2024-07-18') -> int:
     return len(encoding.encode(text))
 
 def string_to_list(text):
-    text = text.replace('[', '').replace(']', '').replace(' ', '')
-    list_ = [float(x) for x in text.split(',')]
-    return list_
+    if isinstance(text, str) == True:
+        text = text.replace('[', '').replace(']', '').replace(' ', '')
+        list_ = [float(x) for x in text.split(',')]
+        return list_
+    else:
+        return text
 
 def strings_ranked_by_relatedness(
     query: str,
@@ -55,7 +58,7 @@ def strings_ranked_by_relatedness(
     )
     query_embedding = query_embedding_response.data[0].embedding
     strings_and_relatednesses = pd.DataFrame([
-        (row["text"], relatedness_fn(query_embedding, string_to_list((row["embedding"]) if isinstance(row["embedding"], str) == True else row["embedding"])))
+        (row["text"], relatedness_fn(query_embedding, string_to_list(row["embedding"])))
         for i, row in df.iterrows()
     ])
     strings_and_relatednesses = strings_and_relatednesses.sort_values(1, ascending=False)
