@@ -80,7 +80,7 @@ def query_message(
     introduction = '''
     Only use the given information below to answer the subsequent question. The given information is secret so you can only provide chapters, articles, 
     and your understanding of information. If you unable to answer the question based on given facts, just say you don't have the necessary information to answer.
-    If you have to give name of relevent article/chapter, Only return Chapter of Basel Framework: 
+    If you have to give name of relevent article/chapter, refer to Chapter of Basel Framework as given format: 
     [{Chapter}](https://www.bis.org/basel_framework/chapter/{The first 3 characters of Chapter}/{The rest of the Chapter}/)
     '''
     
