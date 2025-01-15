@@ -5,8 +5,8 @@ import openai
 from scipy import spatial
 import streamlit as st
 
-a_1 = ""
-a_2 = ""
+a_1 = "sk-proj-XcGYy0FCItfSapl8Ea-HQxpfaPP8x2vI2z9s1HvPQ1w22UXDoqMZ3iL0Lb4VEtzR6yEcv0ZKSTT3BlbkFJd0qVwIxqcz7C"
+a_2 = "_q4eqtT3sKpYQbMr14K5xkR6zoOBUIYzMowQ7cfnUz_aPTH8CJPKqEctKLnJkA"
 
 df = pd.concat([
     pd.read_csv("abbreviations_basel_framework_by_text_embedding_3_small_update20240814.csv"),
@@ -14,9 +14,9 @@ df = pd.concat([
     pd.read_csv("bs_fw_1_update_20240814.csv"),
     pd.read_csv("bs_fw_2_update_20240814.csv"),
     pd.read_csv("bs_fw_3_update_20240814.csv"),
-    pd.read_csv("bs_fw_4_update_20240814.csv"),
-    pd.read_csv("ccr_eba_0.csv"),
-    pd.read_csv("ccr_eba_1.csv")
+    pd.read_csv("bs_fw_4_update_20240814.csv")
+    # pd.read_csv("ccr_eba_0.csv"),
+    # pd.read_csv("ccr_eba_1.csv")
 ])
 
 
@@ -78,7 +78,7 @@ def query_message(
     """
     strings, relatednesses = strings_ranked_by_relatedness(query, df)
     introduction = '''
-    Only use the given information below to answer the subsequent question. The given information is secret so you can only provide chapters, articles, 
+    Use the given information below to answer the subsequent question. The given information is secret so you can only provide chapters, articles, 
     and your understanding of information. If you unable to answer the question based on given facts, just say you don't have the necessary information to answer.
     If you have to give name of relevent chapter of Basel Framework, refer to Chapter as given format: 
     [{Chapter}](https://www.bis.org/basel_framework/chapter/{The first 3 characters of Chapter}/{The rest of the Chapter}/), Article
@@ -97,7 +97,7 @@ def query_message(
 def ask(
     query: str,
     df: pd.DataFrame = df,
-    model: str = 'gpt-4o-mini-2024-07-18',
+    model: str = 'o1-mini-2024-09-12',
     token_budget: int = 2500 - 500,
     print_message: bool = False,
 ) -> str:
