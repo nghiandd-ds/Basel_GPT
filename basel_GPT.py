@@ -97,7 +97,7 @@ def query_message(
 def ask(
     query: str,
     df: pd.DataFrame = df,
-    model: str = 'o1-mini-2024-09-12',
+    model: str = 'gpt-4o-mini-2024-07-18',
     token_budget: int = 2500 - 500,
     print_message: bool = False,
 ) -> str:
