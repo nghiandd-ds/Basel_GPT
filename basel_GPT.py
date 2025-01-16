@@ -110,7 +110,8 @@ def ask(
     ]
     response = client.chat.completions.create(
         model=model,
-        messages=messages
+        messages=messages,
+        temperature=1,
     )
     response_message = response.choices[0].message.content
     return response_message
