@@ -47,7 +47,7 @@ def strings_ranked_by_relatedness(
     df: pd.DataFrame,
     relatedness_fn = lambda x, y: 1 - spatial.distance.cosine(x, y),
     top_n: int = 50,
-    cut_off: float = 0.1
+    cut_off: float = 0.5
 ) -> tuple[list[str], list[float]]:
     """
     Returns a list of strings and relatednesses, sorted from most related to least.
@@ -78,7 +78,7 @@ def query_message(
     """
     strings, relatednesses = strings_ranked_by_relatedness(query, df)
     introduction = '''
-    Use the given information below and what relevent information to answer the question. The given information is secret so you can only provide chapters, articles, 
+    Answer the question. Some of the information given below might help. But the given information is secret so you can only provide chapters, articles, 
     and your understanding of information. If you unable to answer the question, just say you don't have the necessary information to answer.
     If you have to give name of relevent chapter, refer to Chapter as given format: 
     [Chapter](https://www.bis.org/basel_framework/chapter/{The first 3 characters of Chapter}/{The rest of the Chapter}/), Article
