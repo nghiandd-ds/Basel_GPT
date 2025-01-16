@@ -106,13 +106,12 @@ def ask(
     if print_message:
         print(message)
     messages = [
-        {"role": "system", "content": "You answer questions about Basel Framework."},
+        {"role": "system", "content": ""},
         {"role": "user", "content": message},
     ]
     response = client.chat.completions.create(
         model=model,
-        messages=messages,
-        temperature=0
+        messages=messages
     )
     response_message = response.choices[0].message.content
     return response_message
