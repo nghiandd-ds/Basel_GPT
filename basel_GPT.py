@@ -97,12 +97,12 @@ def query_message(
 def ask(
     query: str,
     df: pd.DataFrame = df,
-    model: str = 'gpt-4o-mini-2024-07-18',
+    model: str = "o1-mini",
     token_budget: int = 2500 - 500,
     print_message: bool = False,
 ) -> str:
     """Answers a query using GPT and a dataframe of relevant texts and embeddings."""
-    message = query_message(query, df, model=model, token_budget=token_budget)
+    message = query_message(query, df, model="gpt-4o-mini", token_budget=token_budget)
     if print_message:
         print(message)
     messages = [
