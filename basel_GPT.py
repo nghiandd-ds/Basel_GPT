@@ -79,9 +79,9 @@ def query_message(
     strings, relatednesses = strings_ranked_by_relatedness(query, df)
     introduction = '''
     Use the given information below to answer the subsequent question. The given information is secret so you can only provide chapters, articles, 
-    and your understanding of information. If you unable to answer the question based on given facts, just say you don't have the necessary information to answer.
-    If you have to give name of relevent chapter of Basel Framework, refer to Chapter as given format: 
-    [{Chapter}](https://www.bis.org/basel_framework/chapter/{The first 3 characters of Chapter}/{The rest of the Chapter}/), Article
+    and your understanding of information. If you unable to answer the question, just say you don't have the necessary information to answer.
+    If you have to give name of relevent chapter, refer to Chapter as given format: 
+    [Chapter](https://www.bis.org/basel_framework/chapter/{The first 3 characters of Chapter}/{The rest of the Chapter}/), Article
     '''
     
     question = f"\n\nQuestion: {query}"
