@@ -106,7 +106,6 @@ def ask(
     if print_message:
         print(message)
     messages = [
-        {"role": "system", "content": ""},
         {"role": "user", "content": message},
     ]
     response = client.chat.completions.create(
