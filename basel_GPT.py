@@ -19,7 +19,7 @@ df = pd.concat([
 ])
 
 
-client = openai.OpenAI(api_key=a_1 + a_2)
+client = openai.OpenAI(api_key=st.secrets["openai_key"]["key"])
 
 def num_tokens(text: str, model: str = 'gpt-4o-mini-2024-07-18') -> int:
     """
